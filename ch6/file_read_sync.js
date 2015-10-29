@@ -3,5 +3,12 @@ var fd = fs.openSync("veggie.txt", 'r');
 var veggies = "";
 
 do {
-  var buf = 
-}
+  var buf = new Buffer(5);
+  buf.fill();
+  var bytes = fs.readSync( fd, buf, null, 5 );
+  console.log("read %dbytes", bytes);
+  veggies += buf.toString();
+} while ( bytes > 0 );
+
+fs.closeSync(fd);
+console.log("Veggies: " + veggies );
