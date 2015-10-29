@@ -20,4 +20,4 @@ function WalkDirs( dirPath ) {
   });
 }
 
-WalkDirs("../ch6");
+WalkDirs("../ch6 ");
