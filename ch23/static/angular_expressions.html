@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>AngularJS Expressions</title>
+  </head>
+  <body>
+    <div ng-controller="myController">
+      <h1>Expressions</h1>
+      {{'Bilbo' + 'Baggins'}}<br>
+      {{first}} {{last}}<br>
+      {{combine('Bilbo', 'Baggins')}}<br>
+      {{combine(first, last)}}<br>
+      <p ng-click="setName(newFirst, newLast)">
+        Click to Change to {{newFirst}} {{newLast}}
+      </p>
+      <p ng-click="setName('Bilbo', 'Baggins')">Click to change to Bilbo Baggins</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.js"></script>
+    <script src="angular_expressions.js"></script>
+  </body>
+</html>
