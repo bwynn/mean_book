@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>Angular JS Dependency Injection</title>
+  </head>
+  <body>
+    <div ng-controller="controllerA">
+      <h2>Application Message:</h2>
+      {{message}}
+    </div><hr>
+    <div ng-controller="controllerB">
+      <h2>Module Message:</h2>
+      {{message}}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.js"></script>
+    <script src="injector.js"></script>
+  </body>
+</html>
