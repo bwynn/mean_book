@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>AngularJS $animate Service</title>
+    <style>
+      .shrink-add, .shrink-remove {
+        transition: all ease 2.5s;
+      }
+
+      .shrink,
+      .shrink-add.shrink-add-active {
+        height: 100px;
+      }
+
+      .start-class,
+      .shrink-remove.shrink-remove-active {
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div ng-controller="myController">
+      <h3>Image Animation</h3>
+      <input type="button" ng-click="myImgClass='fadeOut'" value="Fade Out"/>
+      <input type="button" ng-click="myImgClass=''" value="Fade In"/>
+      <input type="button" ng-click="myImgClass='shrink'" value="Small"/>
+      <input type="button" ng-click="myImgClass=''" value="Big"/>
+      <hr>
+      <img ng-class="myImgClass" src="/img/sevensisters.jpg" />
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.js"></script>
+    <script src="service_animate.js"></script>
+  </body>
+</html>

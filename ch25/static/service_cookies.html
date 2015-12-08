@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>AngularJS $cookie Service</title>
+  </head>
+  <body>
+    <div ng-controller="myController">
+      <h3>Favorite Cookie</h3>
+      <input type="radio" value="Chocolate Chip" ng-model="favCookie" ng-change="setCookie()">Chocolate Chip</value><br/>
+      <input type="radio" value="Oatmeal" ng-model="favCookie" ng-change="setCookie()">Oatmeal</value><br/>
+      <input type="radio" value="Frosted" ng-model="favCookie" ng-change="setCookie()">Frosted</value><br/>
+      <input type="radio" value="None" ng-model="favCookie" ng-change="setCookie()">None</value><br/>
+      <hr>Cookies: {{myFavCookie}}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-cookies.js"></script>
+    <script src="service_cookies.js"></script>
+  </body>
+</html>
