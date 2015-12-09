@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>User Login and Sessions</title>
+  <link rel='stylsheet' href='/static/css/styles.css'/>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>Welcome. You are Logged In as <%= username %></h2>
+    <a href="/logout">logout</a>
+    <a href="/user">Edit User</a>
+    <p>Place your Code Here</p>
+  </div>
+  <hr><%= msg %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.js"></script>
+  <script src="/static/js/my_app.js"></script>
+</body>
+</html>
