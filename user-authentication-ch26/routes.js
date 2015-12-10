@@ -1,48 +1,52 @@
+var crypto = require('crypto');
 var express = require('express');
 
 module.exports = function(app) {
-  app
-    .use('/static', express.static('./static'))
+  var users = require('./controllers/users_controller');
+  app.use('/static', express.static('./static'))
+     .use('/lib', express.static('../lib'));
 
-    .get('/', function(req, res) {
-      // Session verify
-      if (req.session.userID) {
-        res.render('index', {msg: req.session.msg,
-                             username: req.session.msg });
-      } else {
-        req.session.msg = 'Access denied!';
-        res.redirect('/login');
-      }
-    })
-
-    .get('/user', function(req, res) {
-      if (req.session.userID) {
-        res.render('user', {msg: req.session.msg});
-      } else {
-        req.session.msg = 'Acces denied!';
-        res.redirect('/login');
-      }
-    })
-
-    .get('/signup', function(req, res) {
-      res.render('signup', {msg: req.session.msg});
-    })
-
-    .get('/login', function(req, res) {
-      res.render('login', {msg: req.session.msg});
-    })
-
-    .get('/logout', function(req, res) {
-      req.session.destroy(function() {
-        res.redirect('/login');
+  app.get('/', function(req, res) {
+    if (req.session.user) {
+      res.render('index', {
+        username: req.session.username,
+        msg: req.session.msg
       });
+    }
+    else {
+      req.session.msg = 'Access Denied!';
+      res.redirect('/login');
+    }
+  });
+  app.get('/user', function(req, res) {
+    if (req.session.user) {
+      res.render('user', {msg:req.session.msg});
+    }
+    else {
+      req.session.msg = 'Access denied!';
+      res.redirect('/login');
+    }
+  });
+  app.get('/signup', function(req, res) {
+    if (req.session.user) {
+      res.redirect('/');
+    }
+    res.render('signup', {msg: req.session.msg});
+  });
+  app.get('/login', function(req, res) {
+    if (req.session.user) {
+      res.redirect('/');
+    }
+    res.render('login', {msg: req.session.msg});
+  });
+  app.get('/logout', function(req, res) {
+    req.session.destroy(function() {
+      res.redirect('/login');
     });
-
-    // Routes to interact with users controller and database
-    var users = require('./controllers/users_controller');
-    app.post('/signup', users.signup);
-    app.post('/user/update', users.updateUser);
-    app.post('/user/delete', users.deleteUser);
-    app.post('/login', users.login);
-    app.get('/user/profile', users.getUserProfile);
-};
+  });
+  app.post('/signup', users.signup);
+  app.post('/user/update', users.updateUser);
+  app.post('/user/delete', users.deleteUser);
+  app.post('/login', users.login);
+  app.get('/user/profile', users.getUserProfile);
+}
