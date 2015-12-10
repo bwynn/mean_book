@@ -1,6 +1,6 @@
 var crypto = require("crypto");
-var mongoose = require("mongoose"),
-    User = mongoose.model("User");
+var mongoose = require("mongoose");
+var User = mongoose.model("User");
 
 function hashPW(pwd) {
   return crypto.createHash('sha256').update(pwd).digest('base64').toString();
@@ -12,7 +12,9 @@ exports.signup = function(req, res) {
   user.set('email', req.body.email);
   user.save(function(err) {
     if (err) {
-      res.session.error = err;
+      console.log(err);
+      console.log(req.body);
+      //res.session.error = err;
       res.redirect('/signup');
     }
     else {
