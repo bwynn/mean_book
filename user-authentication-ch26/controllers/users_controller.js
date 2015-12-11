@@ -8,13 +8,14 @@ function hashPW(pwd) {
 
 exports.signup = function(req, res) {
   var user = new User({username:req.body.username});
-  user.set('hashed_password', hashPW(req.body.password));
-  user.set('email', req.body.email);
+  var pwd = user.set('hashed_password', hashPW(req.body.password));
+  var email = user.set('email', req.body.email);
+  //console.log(user)
+  //user.save();
   user.save(function(err) {
+    throw err;
     if (err) {
-      console.log(err);
-      console.log(req.body);
-      //res.session.error = err;
+      req.session.error = err;
       res.redirect('/signup');
     }
     else {

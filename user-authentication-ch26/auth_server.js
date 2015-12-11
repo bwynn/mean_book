@@ -7,7 +7,7 @@ var expressSession = require('express-session');
 var mongoStore = require('connect-mongo')({session: expressSession});
 var mongoose = require('mongoose');
 require('./models/users_model.js');
-var conn = mongoose.connect('mongodb://localhost/myapp');
+var conn = mongoose.connect('mongodb://localhost/myapp'); // n/a
 var app = express();
 app.engine('.html', require('ejs').__express);
 app.set('views', __dirname + '/views');
