@@ -10,20 +10,18 @@ exports.signup = function(req, res) {
   var user = new User({username:req.body.username});
   var pwd = user.set('hashed_password', hashPW(req.body.password));
   var email = user.set('email', req.body.email);
-  //console.log(user)
-  //user.save();
-  user.save(function(err) {
-    throw err;
-    if (err) {
-      req.session.error = err;
-      res.redirect('/signup');
-    }
-    else {
+  user.save(function() {
+    console.log(user);
+    //if (err) {
+      //req.session.error = err;
+      //res.redirect('/signup');
+    //}
+    //else {
       req.session.user = user.id;
       req.session.username = user.username;
       req.session.msg = "Authenticated as " + user.username;
       res.redirect('/');
-    }
+    //}
   });
 };
 
@@ -70,13 +68,13 @@ exports.updateUser = function(req, res) {
       .exec(function(err, user) {
         user.set('email', req.body.email);
         user.set('color', req.body.color);
-        user.save(function(err) {
-          if (err) {
-            res.session.error = err;
-          }
-          else {
+        user.save(function() {
+          //if (err) {
+            //res.session.error = err;
+          //}
+          //else {
             req.session.msg = "User updated";
-          }
+          //}
           res.redirect('/user');
         });
       });
