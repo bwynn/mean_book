@@ -1,0 +1,81 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'mongo@1.3.23' ]
+2 info using npm@3.3.9
+3 info using node@v0.10.36
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData mongo@1.3.23
+8 silly fetchNamedPackageData mongo
+9 silly mapToRegistry name mongo
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://npm.apple.com/
+12 silly mapToRegistry uri https://npm.apple.com/mongo
+13 verbose request uri https://npm.apple.com/mongo
+14 verbose request always-auth set; sending authorization
+15 info attempt registry request try #1 at 12:23:13
+16 verbose request id f80acdd80f18be9c
+17 http request GET https://npm.apple.com/mongo
+18 http 200 https://npm.apple.com/mongo
+19 verbose headers { server: 'nginx/1.9.5',
+19 verbose headers   date: 'Mon, 11 Jan 2016 20:23:13 GMT',
+19 verbose headers   'content-type': 'application/json',
+19 verbose headers   'transfer-encoding': 'chunked',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'x-artifactory-id': '8a2176306814e51da0109278804e3b9a32e6824f',
+19 verbose headers   'x-artifactory-node-id': 'mr11a00is-hpba01111601.isg.apple.com',
+19 verbose headers   'strict-transport-security': 'max-age=31536000',
+19 verbose headers   'x-proxy-cache-status': 'EXPIRED',
+19 verbose headers   'x-proxy-node-id': 'a206936.mr.iso.apple.com' }
+20 silly get cb [ 200,
+20 silly get   { server: 'nginx/1.9.5',
+20 silly get     date: 'Mon, 11 Jan 2016 20:23:13 GMT',
+20 silly get     'content-type': 'application/json',
+20 silly get     'transfer-encoding': 'chunked',
+20 silly get     connection: 'keep-alive',
+20 silly get     'x-artifactory-id': '8a2176306814e51da0109278804e3b9a32e6824f',
+20 silly get     'x-artifactory-node-id': 'mr11a00is-hpba01111601.isg.apple.com',
+20 silly get     'strict-transport-security': 'max-age=31536000',
+20 silly get     'x-proxy-cache-status': 'EXPIRED',
+20 silly get     'x-proxy-node-id': 'a206936.mr.iso.apple.com' } ]
+21 verbose get saving mongo to /Users/b_wynn/.npm/npm.apple.com/mongo/.cache.json
+22 silly fetchPackageMetaData Error: No compatible version found: mongo@1.3.23
+22 silly fetchPackageMetaData Valid install targets:
+22 silly fetchPackageMetaData 0.1.0
+22 silly fetchPackageMetaData
+22 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:146:16)
+22 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+22 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:19:8
+22 silly fetchPackageMetaData     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:168:7)
+22 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
+22 silly fetchPackageMetaData     at Object.oncomplete (fs.js:108:15)
+22 silly fetchPackageMetaData  error for mongo@1.3.23 [Error: No compatible version found: mongo@1.3.23
+22 silly fetchPackageMetaData Valid install targets:
+22 silly fetchPackageMetaData 0.1.0
+22 silly fetchPackageMetaData ]
+23 silly rollbackFailedOptional Starting
+24 silly rollbackFailedOptional Finishing
+25 silly runTopLevelLifecycles Starting
+26 silly runTopLevelLifecycles Finishing
+27 silly install printInstalled
+28 verbose stack Error: No compatible version found: mongo@1.3.23
+28 verbose stack Valid install targets:
+28 verbose stack 0.1.0
+28 verbose stack
+28 verbose stack     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:146:16)
+28 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+28 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:19:8
+28 verbose stack     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:168:7)
+28 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
+28 verbose stack     at Object.oncomplete (fs.js:108:15)
+29 verbose cwd /Users/b_wynn/Documents/mean_book/user-authentication-ch26
+30 error Darwin 15.0.0
+31 error argv "node" "/usr/local/bin/npm" "install" "-g" "mongo@1.3.23"
+32 error node v0.10.36
+33 error npm  v3.3.9
+34 error No compatible version found: mongo@1.3.23
+34 error Valid install targets:
+34 error 0.1.0
+35 error If you need help, you may report this error at:
+35 error     <https://github.com/npm/npm/issues>
+36 verbose exit [ 1, true ]

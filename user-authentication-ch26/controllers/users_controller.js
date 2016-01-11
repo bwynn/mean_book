@@ -10,11 +10,11 @@ exports.signup = function(req, res) {
   var user = new User({username:req.body.username});
   var pwd = user.set('hashed_password', hashPW(req.body.password));
   var email = user.set('email', req.body.email);
-  user.save();
-  /*user.save(function(err) {
+  //user.save(); - hack to 'make it work'
+  user.save(function(err) {
     console.log(user);
     if (err) {
-      console.log(req);
+      console.log(err);
       req.session.error = err;
       res.redirect('/signup');
     }
@@ -24,7 +24,7 @@ exports.signup = function(req, res) {
       req.session.msg = "Authenticated as " + user.username;
       res.redirect('/');
     }
-  });*/
+  });
 };
 
 exports.login = function(req, res) {
