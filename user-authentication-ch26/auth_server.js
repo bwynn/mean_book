@@ -20,7 +20,7 @@ app.use(expressSession({
   resave: true,
   cookie: {maxAge: 60*60*1000},
   store: new mongoStore({
-    db: mongoose.connection.db,
+    db: conn.connection.db,
     collection: 'sessions'
   })
 }));
